@@ -3,7 +3,7 @@
     "name": "My Site",
     "currentPage": "index.html",
     "versionFirst": "4.0.14",
-    "uniqCompNum": 40,
+    "uniqCompNum": 42,
     "versionPublish": "4.4.1",
     "theme": {
       "name": "mobirise4",
@@ -50,21 +50,25 @@
       "components": [
         {
           "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-text": {
-              "color": "#767676"
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
             }
           },
-          "_name": "content3",
-          "_customHTML": "<section mbr-id=\"_anchor\" mbr-paddings class=\"mbr-section article content3\">\n      \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) --> \n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"8\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"3\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->     \n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"row col-12 col-md-8\">\n                <div class=\"col-12 col-md-6 pr-lg-4 mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-article data-app-selector=\".mbr-text\" data-multiline>Beneath you can see all the designs I made in my first year on Lucas school of arts. Every design is unique in it's own way. They are all designed with a diffrent mindgoal. In every design it provokes the ready or customer to think about the design and activate the mind.&nbsp;</div>\n                <div class=\"col-12 col-md-6 pl-lg-4 mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-article data-app-selector=\".mbr-text\" data-multiline>You can also view my latest design. Wich was a groupproject. We created our own identidy as referee's.&nbsp;</div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "qDrfCcVLAx",
-          "_anchor": "content3-r",
+          "_name": "header2",
+          "_customHTML": "<section group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n         'mbr-fullscreen': fullScreen,\n         'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" checked>\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/jumbotron.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#000000\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#767676\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container align-center\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"mbr-white col-md-10\">\n                <h1 class=\"mbr-section-title mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n                    Welcome to<br>FAUCONNIER LIESBETH</h1>\n                <h3 class=\"mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showSubTitle\">aspiring graphic desinger</h3>\n                <p class=\"mbr-text pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                    Beneath you can see all the designs I made in my first year on Lucas school of arts. Every design is unique in it's own way. They are all designed with a diffrent mindgoal. In every design it provokes the ready or customer to think about the design and activate the mind. You can also view my latest design. Wich was a groupproject. We created our own identidy as referee's.  \n                </p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                    <a class=\"btn btn-md btn-secondary\" href=\"https://mobirise.com\">LEARN MORE</a>\n                    <a class=\"btn btn-md btn-white-outline\" href=\"https://mobirise.com\">LIVE DEMO</a>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_cid": "qF0Z42wJJO",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {}
+          "_params": {},
+          "_anchor": "header2-15"
         },
         {
           "_styles": {
